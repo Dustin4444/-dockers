@@ -31,8 +31,9 @@ jobs:
 
       - run:
           name: Perform deployment
-          command:
+          command: |
             # Add here your custom logic to perform the deployment
+            echo "Performing deployment..."
 
       # These last two steps update the PENDING deployment marker
       # to SUCCESS or FAILED, based on the outcome of the job.
@@ -46,7 +47,7 @@ jobs:
           name: Update planned release to FAILED
           command: |
             circleci run release update \
-             --status=FAILED \
+             --status=FAILED
           when: on_fail
 
   # This job handles the cancellation of the deploy marker
@@ -68,7 +69,7 @@ workflows:
       - cancel-deploy:
           requires:
             - deploy-component:
-              - canceled
+                - canceled
           filters:
             branches:
               only: main
