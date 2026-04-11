@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "code": 1010,
+  "error": "Could not find any valid IaC files",
+  "path": "/home/ubuntu/repos/-dockers"
+}
