@@ -68,7 +68,7 @@ workflows:
       - deploy-component
       - cancel-deploy:
           requires:
-            - deploy-component
+            - deploy-component: canceled
           filters:
             branches:
               only: main
