@@ -1,5 +1,7 @@
 # Welcome to the Copilot+Codespaces Playground Demo 
 
+[![CodSpeed](https://img.shields.io/endpoint?url=https://codspeed.io/badge.json)](https://app.codspeed.io/Dustin4444/-dockers?utm_source=badge)
+
 ## Our Mission
 Our goal is to provide a self-serve, one-click Copilot experience that will be hosted on Codespaces.
 
@@ -22,6 +24,19 @@ During the the GitHub Copilot+Codespaces Playground Demo, you are in charge! You
 
 ![screenshot3](media/screenshot3.png)
 
+
+## Benchmarks
+
+Performance of the data-processing workloads used in this playground (JSON to `User`
+conversion and notebook inspection) is tracked with [CodSpeed](https://codspeed.io).
+The benchmarks live in `benchmarks/` and run on every push and pull request.
+
+To run them locally with [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv sync
+uv run pytest benchmarks --codspeed
+```
 
 ## FAQ
 <details>
